@@ -37,7 +37,7 @@ dependencies:
 
   #State Management
   provider: ^5.0.0
-
+  cloud_firestore: ^2.3.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

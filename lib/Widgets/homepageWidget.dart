@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:signin/provider/google_sign_in.dart';
+import 'package:signin/Widgets/createprofile.dart';
 
 class HomePageWidget extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser!;
@@ -10,7 +11,7 @@ class HomePageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("User is Logged Outr"),
+          title: Text("User is Logged Out"),
           centerTitle: true,
           actions: [
             IconButton(
@@ -22,13 +23,21 @@ class HomePageWidget extends StatelessWidget {
                 icon: FaIcon(FontAwesomeIcons.signOutAlt))
           ],
         ),
-        body: Center(
-            child: ListTile(
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(user.photoURL!),
-          ),
-          title: Text(user.displayName!),
-          subtitle: Text(user.email!),
-        )));
+        body: 
+        // Column(
+        //   children: [
+        //     ListTile(
+        //       leading: CircleAvatar(
+        //     backgroundImage: NetworkImage(user.photoURL!),
+        //       ),
+        //       title: Text(user.displayName!),
+        //       subtitle: Text(user.email!),
+        //     ),
+
+         CreateProfile(),
+        //  ],
+          
+     //   )
+        );
   }
 }
